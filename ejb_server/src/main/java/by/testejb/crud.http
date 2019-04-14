@@ -5,5 +5,10 @@ GET http://localhost:8080/api/newuser
 
 # Save new user
 POST http://localhost:8080/api/newuser?id=2&name=Denis&password=qqq
+#Content-Type: application/json
+
+#{
+#  "sd": "asas"
+#}
 
 ###

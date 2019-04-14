@@ -5,7 +5,6 @@ import by.testejb.service.UserEJB;
 import com.google.gson.Gson;
 
 import javax.ejb.EJB;
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,16 +22,9 @@ public class UserServlet extends HttpServlet {
     @EJB
     private UserEJB userEJB;
 
-//    public static void main(String[] args) {
-//            int a=2,b=3;
-//            if (a++<2 && ++b>0)
-//                System.out.println (a*b);//12 and 8
-//            System.out.println (a+""+b);// 3 and 2 ' ' 4
-//
-//    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println(req.getUserPrincipal().getName());
         PrintWriter writer = resp.getWriter();
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
